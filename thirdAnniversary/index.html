@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <audio id= "music" src="./music/520.mp3" autoplay loop></audio>
     <!-- 标题板块 -->
     <div class="title">
         <img src="./images/bg1.gif" alt="bgGif">
@@ -284,6 +285,20 @@
                 useFlakeTrans: false
             });
         });
+    </script>
+    <!--触发任意点击事件后自动播放音乐-->
+    <script type="text/javascript">
+        window.onload = function(){
+                 setInterval("toggleSound()",1);
+            }
+    
+        function toggleSound() {
+                    var music = document.getElementById("music");//获取ID
+                    if (music.paused) { //判读是否播放
+                        music.paused=false;
+                        music.play(); //没有就播放
+                    }    
+            }
     </script>
 </body>
 
